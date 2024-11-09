@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Admission Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#admission-form">Admission</a></li>
+                <li><a href="#todo-list">To-Do List</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- College Admission Form -->
+    <section id="admission-form">
+        <h1>College Admission Form</h1>
+        <form id="college-form">
+            <div class="form-group">
+                <label for="full-name">Full Name</label>
+                <input type="text" id="full-name" name="full-name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+            <div class="form-group">
+                <label for="course">Select Course</label>
+                <select id="course" name="course" required>
+                    <option value="computer-science">Computer Science</option>
+                    <option value="mechanical-engineering">Mechanical Engineering</option>
+                    <option value="civil-engineering">Civil Engineering</option>
+                    <option value="business-administration">Business Administration</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="upload">Upload Documents</label>
+                <input type="file" id="upload" name="upload" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Additional Message</label>
+                <textarea id="message" name="message"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" id="submit-btn">Submit</button>
+            </div>
+        </form>
+        <div id="confirmation-message"></div>
+    </section>
+
+    <!-- To-Do List -->
+    <section id="todo-list">
+        <h2>To-Do List</h2>
+        <div class="todo-container">
+            <input type="text" id="todo-input" placeholder="Add a new task">
+            <button onclick="addTask()">Add Task</button>
+            <ul id="tasks"></ul>
+        </div>
+    </section>
+
+    <!-- Image Gallery -->
+    <section id="gallery">
+        <h2>Image Gallery</h2>
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="https://res.cloudinary.com/dglleot5i/image/upload/v1731079282/t1_rewwls.jpg" alt="Administrative Block">
+                <p>Administrative Block</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://res.cloudinary.com/dglleot5i/image/upload/v1731079477/t2_vvkapk.jpg" alt="Entrance Gate">
+                <p>Entrance Gate</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://res.cloudinary.com/dglleot5i/image/upload/v1731079603/t3_ocxq78.jpg" alt="Laboratory">
+                <p>Laboratory</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://res.cloudinary.com/dglleot5i/image/upload/v1731079673/t4_gbpqzv.jpg" alt="Park">
+                <p>Park</p>
+            </div>
+        </div>1
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About</h2>
+        <p>Sri Padmavati Mahila Visvavidyalayam is a state university for women, located in Tirupati, Andhra Pradesh, India. 
+        Founded in 1983, it is dedicated to empowering women through quality education, promoting research, and offering programs 
+        that address the needs of society and industry. The university offers a range of undergraduate, postgraduate, and doctoral programs, 
+        with a commitment to fostering knowledge, innovation, and societal development.</p>
+    </section>
+
+    <footer>
+        <p>Contact us at: <a href="mailto:info@spmvv.ac.in">info@spmvv.ac.in</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

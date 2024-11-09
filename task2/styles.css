@@ -1,0 +1,183 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #577ca0;
+    padding: 20px;
+    background-image: url('https://res.cloudinary.com/dglleot5i/image/upload/v1731079397/t2_e1xghm.jpg');
+    background-size: cover; /* Makes sure the image covers the entire page */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the image fixed while scrolling */
+}
+
+
+/* Navigation styles */
+header {
+    background: linear-gradient(90deg, #006400, #1E90FF);
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    border-radius: 4px;
+    text-decoration: underline;
+}
+
+/* Form Section */
+#admission-form {
+    max-width: 900px; /* Increased form size */
+    margin: 40px auto;
+    padding: 40px; /* Increased padding */
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button#submit-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #006400;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button#submit-btn:hover {
+    background-color: #1E90FF;
+}
+
+/* To-Do List Section */
+#todo-list {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.todo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#todo-input {
+    padding: 10px;
+    width: 250px;
+    margin-bottom: 10px;
+    border: 1px solid #780d0d;
+    border-radius: 4px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+}
+
+ul li button {
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Image Gallery Section */
+#gallery {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery-item {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: translateX(5px) translateY(-5px) scale(1.1); /* Added scaling */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Added shadow effect */
+}
+
+.gallery-item p {
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+/* About Section */
+#about {
+    margin-top: 40px;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+}
+
+
+
+
