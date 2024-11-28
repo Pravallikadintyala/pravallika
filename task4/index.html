@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#todo">To-Do List</a></li>
+        <li><a href="#courses">Courses Offered</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="content">
+      <h1>About</h1>
+      <p>Hello! I am a passionate and driven Master of Computer Applications (MCA) student with a deep enthusiasm for technology and innovation. Throughout my academic journey, I have built a solid foundation in key areas of computer science, including software development, data structures, and algorithms. This knowledge has equipped me with the critical problem-solving skills and technical expertise necessary to approach complex challenges.
+
+        My academic background is complemented by hands-on experience in various programming languages and development frameworks, which allows me to bring ideas to life and contribute effectively to projects. I am particularly interested in leveraging cutting-edge technologies such as Artificial Intelligence, Machine Learning, and Data Science to create impactful solutions.
+        
+        With a strong commitment to continuous learning and growth, I am eager to contribute to projects that push the boundaries of what is possible, while also embracing the opportunity to collaborate with like-minded professionals. My ultimate goal is to bring a fresh, innovative perspective to technology, drive meaningful change, and contribute to advancements that improve the way we interact with and benefit from technology in our daily lives.</p>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="content">
+      <h1>My Projects</h1>
+      <div class="project-grid">
+        <div class="project-item">
+          <img src="https://res.cloudinary.com/dsvrimczh/image/upload/v1732727187/Aiml_f2ay74.jpg" alt="AI&ML Project">
+          <h2>AI&ML</h2>
+          <p>Artificial Intelligence & Machine Learning project in sentiment analysis certified by IBM.</p>
+        </div>
+        <div class="project-item">
+          <img src="https://res.cloudinary.com/dsvrimczh/image/upload/v1732727370/cybersecurity_qwzlbr.jpg" alt="Cybersecurity Project">
+          <h2>Cybersecurity</h2>
+          <p>Investigating Windows artifacts for cyber-attack forensics, focusing on ransomware and phishing.</p>
+        </div>
+        <div class="project-item">
+          <img src="https://res.cloudinary.com/dsvrimczh/image/upload/v1732727538/webdevelopment_woogjw.jpg" alt="Web Development Project">
+          <h2>Web Development</h2>
+          <p>Building front-end web applications using HTML, CSS, and JavaScript.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- To-Do List Section -->
+  <section id="todo">
+    <div class="content">
+      <h1>To-Do List </h1>
+      <div id="todo-list">
+        <h2>My Tasks</h2>
+        <ul id="todo">
+          <!-- List items will be dynamically inserted here -->
+        </ul>
+        <input type="text" id="todo-input" placeholder="Add new task...">
+        <button onclick="addTodo()">Add Task</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Courses Offered Section -->
+  <section id="courses">
+    <div class="content">
+      <h1>Courses Offered</h1>
+
+      <!-- Course Filter and Sort -->
+      <div class="filter-sort">
+        <label for="category">Filter by Category:</label>
+        <select id="category">
+          <option value="all">All</option>
+          <option value="programming">Programming</option>
+          <option value="data-science">Data Science</option>
+          <option value="cybersecurity">Cybersecurity</option>
+        </select>
+
+        <label for="sort">Sort by Difficulty:</label>
+        <select id="sort">
+          <option value="default">Default</option>
+          <option value="high-to-low">High to Low</option>
+          <option value="low-to-high">Low to High</option>
+        </select>
+      </div>
+
+      <!-- Course List -->
+      <div class="course-grid">
+        <!-- Course 1 -->
+        <div class="course-item" data-category="programming" data-difficulty="3">
+          <img src="https://res.cloudinary.com/dsvrimczh/image/upload/v1732788004/c1_wsm37e.jpg" alt="Course 1">
+          <h2>Introduction to Python</h2>
+          <p>Learn Python programming fundamentals with hands-on examples.</p>
+          <p class="difficulty">Difficulty: Intermediate</p>
+          <div class="rating">⭐⭐⭐⭐</div>
+        </div>
+      
+        <!-- Course 2 -->
+        <div class="course-item" data-category="data-science" data-difficulty="4">
+          <img src="https://res.cloudinary.com/dsvrimczh/image/upload/v1732788151/c2_n7ov5y.jpg" alt="Course 2">
+          <h2>Data Science</h2>
+          <p>Master the basics of data science using the R programming language.</p>
+          <p class="difficulty">Difficulty: Advanced</p>
+          <div class="rating">⭐⭐⭐⭐⭐</div>
+        </div>
+      
+        <!-- Course 3 -->
+        <div class="course-item" data-category="cybersecurity" data-difficulty="2">
+          <img src="https://res.cloudinary.com/dsvrimczh/image/upload/v1732788180/c3_gxtkwl.jpg" alt="Course 3">
+          <h2>Cybersecurity Essentials</h2>
+          <p>Learn the core principles of cybersecurity, including encryption, firewalls, and more.</p>
+          <p class="difficulty">Difficulty: Beginner</p>
+          <div class="rating">⭐⭐⭐</div>
+        </div>
+      
+        <!-- Course 4 -->
+        <div class="course-item" data-category="programming" data-difficulty="5">
+          <img src="https://res.cloudinary.com/dsvrimczh/image/upload/v1732788313/c4_m0qmfn.jpg" alt="Course 4">
+          <h2>Advanced JavaScript</h2>
+          <p>Delve deeper into JavaScript and learn advanced techniques and frameworks.</p>
+          <p class="difficulty">Difficulty: Expert</p>
+          <div class="rating">⭐⭐⭐⭐⭐</div>
+        </div>
+      
+        <!-- Course 5 -->
+        <div class="course-item" data-category="data-science" data-difficulty="3">
+          <img src="https://res.cloudinary.com/dsvrimczh/image/upload/v1732788350/c5_znvu93.jpg" alt="Course 5">
+          <h2>Machine Learning Fundamentals</h2>
+          <p>Understand the basics of machine learning and apply algorithms to real-world problems.</p>
+          <p class="difficulty">Difficulty: Intermediate</p>
+          <div class="rating">⭐⭐⭐⭐</div>
+        </div>
+      
+        <!-- Course 6 -->
+        <div class="course-item" data-category="cybersecurity" data-difficulty="4">
+          <img src="https://res.cloudinary.com/dsvrimczh/image/upload/v1732788391/c6_phqo9d.jpg" alt="Course 6">
+          <h2>Ethical Hacking</h2>
+          <p>Learn penetration testing techniques to identify vulnerabilities in a system.</p>
+          <p class="difficulty">Difficulty: Advanced</p>
+          <div class="rating">⭐⭐⭐⭐⭐</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="content">
+      <h1>Contact Me</h1>
+      <form id="contact-form">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <textarea id="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2024 Your Name. All Rights Reserved.</p>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
