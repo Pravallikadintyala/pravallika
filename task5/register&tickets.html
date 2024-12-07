@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register & Tickets</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://res.cloudinary.com/dglleot5i/image/upload/v1733551088/bg_rj0drv.jpg'); /* Gradient background */
+            color: #fff;
+        }
+
+        /* Register & Tickets Section Styling */
+        .register-section {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 2rem auto;
+            color: white;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .register-section h2 {
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        .register-form .form-group {
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .register-form label {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .register-form input {
+            width: 100%;
+            padding: 0.8rem;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            color: #333;
+        }
+
+        .register-btn {
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            color: white;
+            background-color: #e7508f;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .register-btn:hover {
+            background-color: #d14072;
+        }
+
+        #form-message {
+            margin-top: 1.5rem;
+            font-size: 1.2rem;
+            color: #e7508f;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Register & Tickets Section -->
+    <section id="registerticket" class="register-section">
+        <h2>Register & Tickets</h2>
+        <form id="register-form" class="register-form">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <button type="submit" class="register-btn">Register</button>
+            <button type="button" class="register-btn" id="home-button">Home</button>
+        </form>
+        <div id="form-message"></div>
+    </section>
+
+    <script>
+        document.getElementById('home-button').addEventListener('click', function () {
+            window.location.href = 'INDEX.HTML'; // Navigate to Home
+        });
+        // JavaScript for handling form submission
+        document.getElementById('register-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            
+            // Validate form fields
+            if (name === "" || email === "") {
+                showMessage("Please fill in all the fields.", "error");
+            } else {
+                // If validation is successful, simulate a registration success message
+                showMessage(`Thank you for registering, ${name}! A confirmation email has been sent to ${email}.`, "success");
+
+                // Reset the form after submission
+                document.getElementById('register-form').reset();
+            }
+        });
+
+        // Function to display messages
+        function showMessage(message, type) {
+            const messageElement = document.getElementById('form-message');
+            messageElement.textContent = message;
+            if (type === "error") {
+                messageElement.style.color = "#ff4d4d"; // Red for errors
+            } else {
+                messageElement.style.color = "#4caf50"; // Green for success
+            }
+        }
+    </script>
+
+</body>
+</html>

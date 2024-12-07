@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Section</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #e7508f, #288da7); /* Gradient background */
+            color: #fff;
+        }
+
+        /* Header and Navigation Styling */
+        header {
+            background-color: #160447;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        nav {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        nav ul li a:hover {
+            color: #e7508f;
+        }
+
+        /* Weather Section */
+        .weather-container {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 500px;
+            margin: 2rem auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .weather-container h2 {
+            margin: 0;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        .weather-container .temperature {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .weather-container .weather-icon {
+            width: 50px;
+            height: 50px;
+        }
+
+        .weather-container p {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        /* Home Button Styling */
+        .home-btn {
+            margin-top: 1.5rem;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            color: white;
+            background-color: #e7508f;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .home-btn:hover {
+            background-color: #d14072;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header and Navigation -->
+    <header>
+        <h1>Weather Info</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#weather" id="weatherLink">Weather</a></li>
+        </ul>
+    </nav>
+
+    <!-- Weather Section -->
+    <section id="weather" class="weather-container">
+        <h2>Weather in New York City</h2>
+        <img src="https://res.cloudinary.com/dglleot5i/image/upload/v1733563947/weather_tb5pq8.jpg" alt="Weather Icon" class="weather-icon" id="weatherIcon">
+        <p class="temperature" id="temperature">22°C</p>
+        <p id="weatherDescription">Clear Sky</p>
+        <p id="humidity">Humidity: 55%</p>
+        <p id="windSpeed">Wind Speed: 4 m/s</p>
+        <a href="index.html" class="home-btn" id="homeButton">Home</a>
+    </section>
+
+    <script>
+        // Fetching weather data from OpenWeatherMap API
+        async function fetchWeather() {
+            const apiKey = 'your_api_key'; // Replace with your OpenWeatherMap API key
+            const city = 'New York';
+            const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+
+                // Handling response and updating UI
+                const weatherIcon = document.getElementById('weatherIcon');
+                const temperature = document.getElementById('temperature');
+                const weatherDescription = document.getElementById('weatherDescription');
+                const humidity = document.getElementById('humidity');
+                const windSpeed = document.getElementById('windSpeed');
+
+                weatherIcon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
+                temperature.textContent = `${data.main.temp}°C`;
+                weatherDescription.textContent = data.weather[0].description;
+                humidity.textContent = `Humidity: ${data.main.humidity}%`;
+                windSpeed.textContent = `Wind Speed: ${data.wind.speed} m/s`;
+
+            } catch (error) {
+                console.error("Error fetching weather data: ", error);
+                alert("Failed to retrieve weather data. Please try again later.");
+            }
+        }
+
+        // Event listener for the "Weather" link
+        document.getElementById('weatherLink').addEventListener('click', function(e) {
+            e.preventDefault();
+            fetchWeather(); // Fetch weather when the "Weather" link is clicked
+        });
+    </script>
+
+</body>
+</html>

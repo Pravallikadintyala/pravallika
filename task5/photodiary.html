@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Diary - New York City</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #fff; /* White text color */
+            background: linear-gradient(to right, #e7508f, #288da7); /* Gradient background from pink to blue */
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #160447; /* Dark header color */
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        /* Photo Gallery */
+        .gallery-container h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #f6f6f7;
+            text-align: center;
+          }
+          .carousel {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin: 0 auto;
+            max-width: 800px;
+          }
+          
+          .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+          }
+          .carousel-images img {
+            max-width: 200%;
+            max-height: 600px; /* Increased from 300px to 500px */
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+          }
+          
+          
+          .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            font-size: 2em;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 10;
+            transition: background-color 0.3s ease;
+          }
+          
+          /* Position buttons slightly outside the image */
+          #prev {
+            left: -50px; /* Move the button to the left, outside the image */
+          }
+          
+          #next {
+            right: -50px; /* Move the button to the right, outside the image */
+          }
+          
+          /* Optional: Add more hover effect for buttons */
+          .carousel-btn:hover {
+            background: rgba(0, 0, 0, 0.7); /* Darken the button background on hover */
+          }
+          
+          .carousel-btn:hover {
+            background: transparent;
+          }
+          
+          #prev {
+            left: 15px;
+          }
+          
+          #next {
+            right: 15px;
+          }
+          
+        /* Home Button Styling */
+        #home-button {
+            display: block;
+            margin: 20px auto; /* Center horizontally and space it below the carousel */
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: white;
+            background-color: #288da7; /* Blue background */
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        #home-button:hover {
+            background-color: #e7508f; /* Pink on hover */
+            transform: translateY(-3px); /* Slight lift on hover */
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #333; /* Dark footer background */
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        /* Footer Hover Effect */
+        footer p:hover {
+            color: #e7508f; /* Pink color for footer text on hover */
+            cursor: pointer; /* Change cursor to pointer on hover */
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>New York City Photo Diary</h1>
+    </header>
+
+    <!-- Photo Gallery -->
+    <section>
+        <div id="gallery" class="gallery-container">
+            <h1>New York Highlights</h1>
+            <div class="carousel">
+              <button id="prev" class="carousel-btn">&lt;</button>
+              <div class="carousel-images">
+                <img src="https://res.cloudinary.com/dglleot5i/image/upload/v1733563601/im4_nzxgdt.webp" alt="Times Square">
+                <img src="https://res.cloudinary.com/dglleot5i/image/upload/v1733563605/im3_dzmpoo.jpg" alt="Central Park">
+                <img src="https://res.cloudinary.com/dglleot5i/image/upload/v1733551088/bg_rj0drv.jpg" alt="Empire State Building">
+                <img src="https://res.cloudinary.com/dglleot5i/image/upload/v1733563615/im1_oh1ns8.jpg" alt="Brooklyn Bridge">
+                <img src="https://res.cloudinary.com/dglleot5i/image/upload/v1733563627/im6_mox806.jpg" alt="Statue of Liberty">
+                <img src="https://res.cloudinary.com/dglleot5i/image/upload/v1733563618/im5_imt9xt.jpg" alt="New York streets"> </div>
+              <button id="next" class="carousel-btn">&gt;</button>
+            </div>
+          </div>
+    
+        <!-- Styled Home Button -->
+        <button type="button" id="home-button">Home</button>
+    </section>
+
+    <script>
+        document.getElementById('home-button').addEventListener('click', function () {
+            window.location.href = 'INDEX.HTML'; // Navigate to Home
+        });
+
+        // JavaScript to handle carousel navigation
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.gallery-container img');
+        const totalImages = images.length;
+
+        const showImage = (index) => {
+            images.forEach((img, i) => {
+                img.style.display = i === index ? 'block' : 'none';
+            });
+        };
+
+        const nextImage = () => {
+            currentIndex = (currentIndex + 1) % totalImages;
+            showImage(currentIndex);
+        };
+
+        const prevImage = () => {
+            currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+            showImage(currentIndex);
+        };
+
+        // Initialize the gallery
+        showImage(currentIndex);
+
+        // Event listeners for arrow buttons
+        document.getElementById('next').addEventListener('click', nextImage);
+        document.getElementById('prev').addEventListener('click', prevImage);
+    </script>
+</body>
+</html>

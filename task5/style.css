@@ -1,0 +1,336 @@
+/* General Styling */
+body {
+    
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #fff; /* White text color */
+    background: url('https://res.cloudinary.com/dglleot5i/image/upload/v1733551088/bg_rj0drv.jpg') no-repeat center center fixed;
+    background-size: cover; /* Ensure the background covers the whole viewport */
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: linear-gradient(to right, #288da7, #e7508f);
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 5px;
+    transition: color 0.3s ease, border-bottom 0.3s ease; /* Smooth transition */
+}
+
+.navbar a:hover {
+    color: #a72887; /* Blue color on hover */
+    border-bottom: 2px solid #288da7; /* Underline effect on hover */
+}
+
+/* Header Styling */
+header {
+    background: linear-gradient(to right, #e38aaf, #7025d3);
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect on header links */
+header nav ul li a:hover {
+    color: #e7508f; /* Pink color on hover */
+}
+
+/* Section Styling */
+section {
+    padding: 2rem;
+    border-bottom: 1px solid #ddd;
+}
+
+section h2 {
+    color: #fff; /* White text color for headings */
+}
+
+#home h2 {
+    text-align: center;
+    font-family: 'Roboto', sans-serif; /* Apply the Google Font */
+}
+
+#thingstod {
+    text-align: center;
+}
+
+#thingstod .h2 {
+    text-align: left;
+}
+
+/* Hover effect on section headings */
+section h2:hover {
+    color: #288da7; /* Blue color for headings on hover */
+}
+
+/* Photo Diary Styling */
+#photodiary .photo {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1rem auto;
+    transition: transform 0.3s ease; /* Smooth zoom effect on hover */
+}
+
+#photodiary .photo:hover {
+    transform: scale(1.05); /* Zoom in slightly on hover */
+    cursor: pointer; /* Change cursor to pointer when hovering over photos */
+}
+
+/* Upcoming Events Section Styling */
+.events-section {
+    color: white;
+    padding: 3rem;
+    text-align: center;
+    margin: 2rem auto;
+    border-radius: 10px;
+    max-width: 1200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.events-section h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.event {
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.event h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.event .date {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.event .description {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.register-btn {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #e7508f;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.register-btn:hover {
+    background-color: #d14072;
+}
+
+/* Button Styling with Hover Effect */
+button {
+    background-color: #288da7;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #e7508f; /* Change button color on hover */
+    transform: translateY(-3px); /* Slight lift on hover */
+}
+
+/* Footer Styling */
+footer {
+    background: #333; /* Dark footer background */
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* Footer Hover Effect */
+footer p:hover {
+    color: #e7508f; /* Pink color for footer text on hover */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* Things to Do Section Styling */
+#thingstod ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#thingstod li {
+    background: #fff; /* White background for list items */
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#thingstod li:hover {
+    background-color: #f2f2f2; /* Light gray background on hover */
+    transform: translateY(-5px); /* Slight upward movement on hover */
+}
+
+#thingstod h3 {
+    color: #288da7; /* Blue color for subheadings */
+}
+
+#thingstod p {
+    color: #333; /* Dark gray text for paragraphs */
+    transition: color 0.3s ease;
+}
+
+/* Hover effect on Things to Do section list items */
+#thingstod li:hover p {
+    color: #288da7; /* Change text color to blue on hover */
+}
+
+/* Media Queries for Responsiveness */
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack navbar items vertically */
+    }
+
+    header {
+        padding: 1rem;
+    }
+
+    section {
+        padding: 1rem;
+    }
+
+    .events-section {
+        padding: 2rem;
+    }
+
+    .event {
+        padding: 1rem;
+    }
+
+    .register-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    #thingstod ul {
+        padding-left: 20px;
+    }
+
+    #thingstod li {
+        padding: 1rem;
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    .navbar a {
+        font-size: 14px;
+        padding: 8px 5px;
+    }
+
+    .events-section {
+        padding: 1.5rem;
+    }
+
+    .event {
+        margin: 1rem 0;
+        padding: 1rem;
+    }
+
+    .event h3 {
+        font-size: 1.6rem;
+    }
+
+    .register-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 1rem;
+    }
+
+    header {
+        padding: 0.8rem;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+    }
+
+    button {
+        padding: 8px 16px;
+    }
+}
+
+/* Tablets and Medium Screens */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .navbar {
+        justify-content: space-evenly;
+    }
+
+    .events-section {
+        padding: 2.5rem;
+    }
+
+    .register-btn {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+    }
+
+    section {
+        padding: 1.5rem;
+    }
+}
+
